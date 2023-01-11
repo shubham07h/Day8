@@ -3,24 +3,32 @@ namespace lineComparision
 {
     public class Program
     {
-        public static void main(double x1, double x2, double y1, double y2)
+        public static void main(double x1, double y1, double x2, double y2)
         {
-            Console.WriteLine("Welcome to Line Comparison Computation Program");
-            double sum, length;
-            sum = ((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-            length = Math.Sqrt(sum);
-            Console.WriteLine("length of Line - " + length);
-            Console.ReadLine();
+            double length1, length2;
+            if (x1 == x2)//start point equal
+            {
+                Console.WriteLine(y1.Equals(y2));//check end points are equal
+            }
+            else
+            {
+                length1 = x1 - x2;
+                length2 = y1 - y2;
+                Console.WriteLine(length1.Equals(length2));
+                Console.ReadLine();
+            }
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter 1st coordinates ");
+            Console.WriteLine("To check Both lines are Equals or no using equals method");
+            Console.WriteLine("Enter start and end point of 1 st line ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             double y1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter 2nd coordinates ");
+            Console.WriteLine("Enter start and end point of 2 nd line ");
             double x2 = Convert.ToDouble(Console.ReadLine());
             double y2 = Convert.ToDouble(Console.ReadLine());
             Program.main(x1, y1, x2, y2);
+
         }
     }
 }
